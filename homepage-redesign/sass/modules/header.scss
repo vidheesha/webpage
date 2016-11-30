@@ -1,0 +1,898 @@
+$header-min-width: 1115px;
+
+$header-bg-color: #30312e;
+$megamenu-hover-amount: 20;
+$page-padding: 108px;
+
+//Header
+$font-family: "proxima-nova", "Open Sans", "Gill Sans MT", "Gill Sans", Corbel, Arial, "sans-serif";
+$header-row-height: 50px;
+$header-mobTab-height: 33px;
+$mobTab-action-icon-width: 25px;
+
+//Menu Bar (Desktop)
+$menu-bar-height: 30px;
+$menu-item-padding: 23px;
+$mega-menu-container-margin-top-bottom: 24px;
+$mega-menu-height: 532px;
+$mega-menu-item-padding-left: 18px;
+$mega-menu-item-padding-right: 10px;
+
+header {
+  box-shadow: 0 1px 2px rgba(0,0,0,.15);
+}
+
+.homepage-header-social-bar {
+
+  min-width: $header-min-width;
+  background-color: $header-bg-color;
+  padding-left: $page-padding;
+  padding-right: $page-padding;
+  color: #cccccc;
+  height: 30px; 
+  font-family: $font-family, regular;
+
+  & .call-us {
+    text-align: left;
+    float: left;
+    padding-top: 5px;
+  }
+
+  & .social {
+    text-align: right;
+    float: right;
+    padding-top: 4px;
+    height: 30px;
+
+    &.social p {
+        display: inline-block;
+        vertical-align: top;
+        padding-top: 1px;
+    }
+
+    &.social a {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-left: 8px;
+    }
+  }
+
+  @media only screen and (min-width: $screen-md) {
+    margin-left: 0px;
+  }
+}
+
+.homepage-header-banner-bar {
+    height: $header-mobTab-height;
+    padding-left: 0px;
+    padding-right: 0px;
+    overflow: hidden;
+
+  @media only screen and (min-width : $screen-md) {
+    body:not(.tb-hh) & {
+      min-width: $header-min-width;
+      padding-left: $page-padding;
+      padding-right: $page-padding;
+      height: $header-row-height;
+      margin-left: 0;
+      background-color: #fff;
+      overflow: visible;
+    }
+  }
+
+  & .logo-container {
+    text-align: left;
+    float: left;
+    margin-left: 15px;
+
+    @media only screen and (min-width : $screen-md) {
+
+      body:not(.tb-hh) & {
+        margin-left: -15px;
+      }
+    }
+
+    & .small-logo {
+        background: url(//img1.beachbodyimages.com/beachbody/image/upload/v1474042977/bbweb/homepage/beachbody_logo_top_2_115x28.png) 0px 0px;
+        width: 110px;
+        height: 35px;
+        margin-top: 2px;
+         @media only screen and (min-width: 375px){
+          background: url(//img1.beachbodyimages.com/beachbody/image/upload/v1474042506/bbweb/homepage/beachbody_logo_header.png) 0px 0px;
+          width: 153px;
+          margin-top: 2px;
+         }
+    }
+  }
+
+  & .actions {
+    text-align: right;
+    float: right;
+    position: relative;
+
+    & div {
+      display: inline-block;
+      vertical-align: top;
+      padding-top: 8px;
+
+        @media only screen and (min-width : $screen-md) {
+          body:not(.tb-hh) & {
+            padding-top: 14px;
+          }
+        }
+    }
+
+    & .phone-container {
+        padding-top: 5px;
+        height: $header-mobTab-height;
+        margin-right: 10px;
+
+        & .action-phone {
+            background: url(//img1.beachbodyimages.com/beachbody/image/upload/h_30/bbweb/homepage/m_header_icons_sprite.png) 184px 0px;
+            width: $mobTab-action-icon-width;
+            height: $header-mobTab-height;
+            margin-top: -2px;
+
+            & a {
+                width: inherit;
+                height: inherit;
+            }
+        }
+
+        & p {
+            font-family: $font-family, regular;
+            padding-top: 2px;
+            margin-bottom: 0px;
+            margin-left: -4x;
+            margin-right: 4px;
+        }
+    }
+
+    & .search-container {
+        width: $mobTab-action-icon-width;
+        height: $header-mobTab-height;
+        margin-right: 10px;
+        cursor: pointer;
+
+      @media only screen and (min-width : $screen-md) {
+        body:not(.tb-hh) & {
+          width: 22px;
+          height: 22px;
+          margin-right: 30px;
+        }
+      }
+    }
+
+    & .help-container {
+      width: $mobTab-action-icon-width;
+      height: $header-mobTab-height;
+      margin-right: 10px;
+
+      @media only screen and (min-width : $screen-md) {
+        body:not(.tb-hh) & {
+          width: 15px;
+          height: 23px;
+          margin-right: 30px;
+        }
+      }
+    }
+
+    & .cart-container {
+      position: relative;
+      height: $header-mobTab-height;
+      width: 45px;
+      margin-left: -6px;
+      margin-right: 10px;
+      padding-top: 6px;
+      background-color: #005eb8;
+
+      & img {
+        position: absolute;
+        top: 9px;
+        left: 4px;
+      }
+
+      @media only screen and (min-width : $screen-md) {
+        body:not(.tb-hh) & {
+          width: 55px;
+          height: $header-row-height;
+          margin-left: 0px;
+          margin-right: 0px;
+          padding-top: 14px;
+
+          & img {
+            position: absolute;
+            top: 14px;
+            left: 7px;
+          }
+        }
+      }
+
+      & span {
+        margin-left: 4px;
+        color: white;
+      }
+    }
+
+    & .menu-container {
+        padding-top: 0px;
+        width: 25px;
+        height: $header-mobTab-height;
+        margin-right: 10px;
+
+        & .action-menu {
+            background: url(//img1.beachbodyimages.com/beachbody/image/upload/h_30/bbweb/homepage/m_header_icons_sprite.png) 30px 0px;
+            width: $mobTab-action-icon-width;
+            height: $header-mobTab-height;
+            margin-top: -5px;
+
+          & a {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+          }
+        }
+    }
+
+    & .tablet-phone a {
+      color: black;
+      
+      &:hover, &:active, &:visited {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+
+#searchBox {
+    padding-left: 0px;
+    padding-right: 0px; 
+    height: 40px;
+    background-color: #ebebeb;
+    display: none;
+    width: 100%;
+
+    @media only screen and (min-width : $screen-md) {
+      body:not(.tb-hh) & {
+        min-width: inherit;
+        padding-left: 0;
+        padding-right: 0;
+        height: $header-row-height;
+        position: absolute;
+        right: 134px;
+        max-width: 350px;
+        top: 0px;
+        padding-top: 0;
+        overflow: hidden;
+        width: 0;
+        display: block;
+      }
+      &.activeSearch {
+        display: block!important;
+        overflow: visible!important;
+      }
+      
+    }
+
+    & .search-query {
+        padding: 0 0 0 0;
+        height: 100%;
+
+        
+
+        & form {
+            display: block;
+            width: 100%;
+            height: 50px;
+
+            
+
+            & div {
+                width: 100%;
+                border-radius: 0;
+
+                @media only screen and (min-width : $screen-md) {
+                    width: 100%;
+                }
+            }
+            #searchDivDT {
+                padding: 0;
+              .navsearchbox {
+                width: 95%; 
+              }
+              @media only screen and (min-width : $screen-md) {
+                > div {
+                  padding-top: 0;
+                  display: block;
+                  top: 40px;
+                  > .autocomplete-w1 {
+                    padding-top: 0!important;
+                    display: block!important;
+                  }
+                }
+              }
+            }
+            .dropdown-menu {
+                margin-top: 3px;
+                padding-left: 10px;
+                @media only screen and (min-width : $screen-sm) {
+                    padding-left: 15px;
+                }
+                @media only screen and (min-width : $screen-md) {
+                    margin-top: 4px;
+                    padding-left: 20px;
+                    padding-top: 0;
+                }
+                .autocomplete-content {
+                    padding-top: 3px;
+                }
+                &:after {
+                    visibility: hidden;
+                }
+                & label {
+                    display: inline;
+                    font-weight: 400;
+                }
+                > .visually-hidden {
+                  display: none;
+                }
+            }
+            & input {
+                width: 100%;
+                margin-top: 0;
+                height: 40px;
+                padding-left: 35px;
+                background-image: url("//img1.beachbodyimages.com/beachbody/image/upload/bbweb/homepage/search_icon_grey.png");
+                background-position: 0 9px;
+                background-repeat: no-repeat;
+                background-color: #ebebeb;
+                color: #000000;
+                font-size: 18px;
+                font-family: $font-family, regular;
+                border: none;
+                outline-width: 0;
+                margin-left: 9px;
+                border-radius: 0;
+               
+                @media only screen and (min-width : $screen-sm) {
+                    margin-left: 12px;
+                }
+                @media only screen and (min-width : $screen-md) {
+                    margin-left: 12px;
+                }
+
+                @include placeholder {
+                    color: #999999;
+                    opacity: 0.7;
+                }
+            }
+            #navsearchboxDT {
+              @media only screen and (min-width : $screen-md) {
+                float: right;
+              }
+            }
+
+          @media only screen and (min-width : $screen-md) {
+            body:not(.tb-hh) & {
+              padding-top: 5px;
+            }
+          }
+        }
+    }
+}
+
+.homepage-menu {
+
+  min-width: $header-min-width;
+  background-color: $header-bg-color;
+  padding-left: $page-padding;
+  padding-right: $page-padding;
+  color: white;
+  height: $menu-bar-height;
+
+  @media only screen and (min-width: $screen-md) {
+    margin-left: 0px;
+    position: relative;
+  }
+
+  & a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  & ul.main-menu {
+
+    margin: 0;
+    font-size: 0;
+    padding: 0;
+    height: $menu-bar-height;
+    -webkit-margin-after: 0;
+
+    & li {
+      font-size: 14px;
+      font-family: $font-family;
+      font-weight: bold;
+      display: inline-block;
+      background-color: #30312e;
+      padding-left: $menu-item-padding;
+      padding-right: $menu-item-padding;
+      padding-top: 5px;
+      height: $menu-bar-height;
+      transition: all 0.3s ease 0s;
+      cursor: pointer;
+      text-transform: uppercase;
+      color: white;
+      position: relative;
+      &:before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-top: 6px solid transparent;
+        position: absolute;
+        top: 29px;
+        left: 50%;
+        margin-left: -7px;
+        z-index: 1000;
+        transition: all 0.3s ease 0s;
+      }
+
+      &:hover, &.active {
+        background-color: #dedede;
+        color: black;
+        &:before {
+          border-top: 6px solid #dedede;
+        }
+      }
+      &:nth-child(4n){
+        &:before {
+          display: none!important;
+        }
+      }
+    }
+  }
+
+  & .left-options {
+    float: left;
+  }
+
+  & .right-options {
+    float: right;
+    margin-right: -$menu-item-padding;
+
+    & ul li {
+
+      margin-left: 0;
+
+      &.active {
+        background-color: #30312e;
+        color: #ff9e1b;
+        &:before {
+          border-top: 6px solid #30312e;
+        }
+      }
+    }
+  }
+
+  & .mega-menu { 
+    height: $mega-menu-height;
+    width: 960px;
+    background-color: white;
+    position: absolute;
+    overflow: hidden;
+    margin-top: $menu-bar-height;
+    z-index: 999;
+
+/*    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    display:block!important;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;*/
+    
+    & .row {
+      margin: 0;
+    }
+
+    &.ng-hide {
+      height: 0;
+    }
+    
+    & .logo {
+      width: 231px;
+      height: 330px;
+      float: left;
+      margin: 24px 0;
+    }
+
+    & .menu-container {
+      margin: $mega-menu-container-margin-top-bottom 0;
+      float: left;
+      width: 729px;
+
+      & .menu-col {
+        float: left;
+        height: $mega-menu-height - (2 * $mega-menu-container-margin-top-bottom);
+
+        & ul {
+          margin: 0;
+          font-size: 0;
+          padding: 0;
+          -webkit-margin-after: 0;
+
+          & li {
+            font-size: 14px;
+            font-family: $font-family;
+            display: table;
+            padding: 9px 5px 8px 18px;
+            height: 10px;
+            transition: all 0.3s ease 0s;
+            cursor: pointer;
+            color: #272727;
+            background-color: white;
+            a {
+              display: block;
+            }
+            &.ng-animate {
+              transition: 0s none;
+            }
+
+            &:hover, &.active, &.selected {
+              background-color: #ff9e1b;
+            }
+
+            & span.indent {
+              margin-left: 1em;
+            }
+          }
+        }
+
+        &.col-2.secondary, &.col-3.secondary {
+          & ul li a span {
+            display: inline-block;
+            line-height: 15px;
+            padding-top: 0.25em;
+            padding-bottom: 0.25em;
+          }
+        }
+
+        &.primary {
+          & ul {
+            & li {
+              width: 100%;
+              text-transform: uppercase;
+              font-weight: bold;
+            }
+          }
+        }
+
+        &.secondary {
+          & ul {
+            & li {
+              width: 100%;
+              text-transform: none;
+              font-weight: normal;
+            }
+          }
+        }
+
+        &.mixed {
+          & ul {
+            & li:first-child {
+              width: 100%;
+              text-transform: uppercase;
+              font-weight: bold;
+            }
+            & li:not(:first-child)  {
+              width: 100%;
+              text-transform: none;
+              font-weight: normal;
+
+              & span {
+                margin-left: 1em;
+              }
+            }
+          }
+        }
+      }
+
+      & .col-1 {
+        width: 246px;
+        border-right: 1px solid #d2d2d2;
+      }
+
+      & .col-2 {
+        width: 243px;
+        border-right: 1px solid #d2d2d2;
+      }
+
+      & .col-3 {
+        width: 240px;
+      }
+    }
+
+    &.bbod {
+      width: 220px;
+      left: 687px;
+      max-height: 120px;
+      
+      .logo {
+        display: none;
+      }
+      .menu-container {
+        width: 100%;
+        ul {
+          li {
+            width: 100%;
+            text-transform: uppercase;
+            font-weight: 700;
+          }
+        }
+        #bod-menu {
+          display: block!important;
+        }
+        #our-company {
+          display: none!important
+        }
+      }
+    }
+    
+    &.our-company {
+      width: 220px;
+      left: 979px;
+      height: 138px;
+      
+      .logo {
+          display: none;
+      }
+      .menu-container {
+        width: 100%;
+        ul {
+          li {
+            width: 100%;
+            text-transform: uppercase;
+            font-weight: 700;
+          }
+        }
+        #bod-menu {
+          display: none!important;
+        }
+        #about {
+          display: block!important;
+          .primaryMegaMenuAbout {
+            display: block;
+          }
+        }
+      } 
+    }
+  }
+}
+
+.mobile-menu {
+
+  position: absolute;
+  width: 280px;
+  max-height: 0;
+  overflow: hidden;
+  right: 0;
+  padding-top: 0;
+  background-color: #ffffff;
+  z-index: 99999;
+
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+
+  &.menu-open {
+    max-height: 3000px;
+    padding-top: 19px;
+  }
+
+  & .nav-item-separator {
+    height: 1px;
+    border-bottom: 1px solid #cccccc;
+    margin-left: 33px;
+  }
+
+  & .nav-item {
+
+    &.active {
+      background-color: #ff9e1b;
+      background-clip: padding-box;
+    }
+
+    & a {
+      display: block;
+      margin-left: 33px;
+      margin-right: 33px;
+      padding-top: 13px;
+      padding-bottom: 12px;
+      color: black;
+      font-size: 14px;
+      font-family: $font-family;
+      font-weight: bold;
+      text-transform: uppercase;
+
+      &:focus {
+        text-decoration: none;
+      }
+      &:hover {
+        text-decoration: none;
+      }
+      &.active {
+        background-color: #ff9e1b;
+        text-decoration: none;
+        padding-left: 33px;
+        margin-left: 0px;
+        padding-right: 33px;
+        margin-right: 0px;
+      }
+
+      &.last-item {
+        border-bottom: 0;
+      }
+
+    }
+    & .more-arrow {
+      float: right;
+      margin-right: -23px;
+      margin-top: -1px;
+      width: 6px;
+      height: 11px;
+    }
+  }
+
+  & .nav-items {
+    padding-bottom: 27px;
+  }
+
+  & .top-nav-item {
+    & .back-arrow {
+      float: left;
+      margin-left: -18px;
+      margin-top: -1px;
+      width: 6px;
+      height: 11px;
+    }
+  }
+
+  & .nav-footer {
+    border-top: 1px solid black;
+    margin-left: 33px;
+    font-size: 14px;
+    font-family: $font-family;
+    font-weight: normal;
+    text-transform: uppercase;
+    padding-top: 41px;
+    padding-bottom: 39px;
+
+    & .follow-text {
+      padding-bottom: 13px;
+    }
+
+    & .social-icons-container {
+
+      & a {
+        margin-right: 25px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      & .nav-social {
+        background-image: url("//img1.beachbodyimages.com/beachbody/image/upload/bbweb/homepage/mobile-menu-social-icons.png");
+        background-repeat: no-repeat;
+        width: 22px;
+        height: 22px;
+        display: inline-block;
+        &.facebook {
+          background-position: 0 -1px;
+        }
+        &.twitter {
+          background-position: -47px -1px;
+        }
+        &.youtube {
+          background-position: -191px 0px;
+        }
+        &.googleplus {
+          background-position: -191px -1px;
+        }
+      }
+    }
+  }
+}
+
+body.tb-hh {
+  header {
+    .visible-lg-block, .visible-lg-inline, .visible-lg-inline-block, .visible-md-block, .visible-md-inline, .visible-md-inline-block, .visible-sm-block, .visible-sm-inline, .visible-sm-inline-block, .visible-xs-block, .visible-xs-inline, .visible-xs-inline-block {
+      @media only screen and (min-width : $screen-xs) {
+        display: none !important;
+      }
+    }
+    .visible-xs-block, .visible-xs-inline, .visible-xs-inline-block, .visible-sm-block, .visible-sm-inline, .visible-sm-inline-block, .visible-md-block, .visible-md-inline, .visible-md-inline-block, .visible-lg-block, .visible-lg-inline, .visible-lg-inline-block {
+      @media only screen and (min-width : $screen-xs) {
+        display: none !important;
+      }
+    }
+    .visible-xs-block, .visible-xs-inline, .visible-xs-inline-block, .visible-sm-block, .visible-sm-inline, .visible-sm-inline-block, .visible-md-block, .visible-md-inline, .visible-md-inline-block, .visible-lg-block, .visible-lg-inline, .visible-lg-inline-block {
+      @media only screen and (min-width : $screen-xs) {
+        display: none !important;
+      }
+    }
+    .visible-sm-inline-block {
+      @media only screen and (min-width : $screen-xs) {
+        display: inline-block !important;
+      }
+    }
+    .hidden-sm {
+      display: none !important;
+    }
+    .visible-sm {
+      @media only screen and (min-width : $screen-xs) {
+        display: block !important;
+      }
+    }
+  }
+}
+
+.mega-menu-hidden {
+  display: none;
+}
+
+.sub-menu-display {
+  display: none;
+}
+.col-1 {
+  display: none;
+}
+#apparel-menu .col-1, #bod-menu .col-1 {
+display: block;
+}
+#apparel-menu, #bod-menu {
+  display: none;
+}
+#mega-menu {
+  height: 0px;
+}
+.company-info {
+  clear: both;
+  color: black;
+  position: absolute;
+  right: 87px;
+  top: 35px;
+  z-index: 5000;
+  display: none;
+}
+
+.company-info ul {
+  list-style: outside none none;
+  text-transform: uppercase;
+  margin-left: -23px;
+  @media screen only and (min-width: 1300px) {
+    margin-left: 0px;
+  }
+}
+.company-info ul li {
+  font-size: 14px;
+  font-family: "proxima-nova", "Open Sans", "Gill Sans MT", "Gill Sans", Corbel, Arial, "sans-serif";
+  display: table;
+  padding: 9px 5px 8px 18px;
+  height: 10px;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  color: #272727;
+  background-color: white;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 700;
+    &:hover, &.active, &.selected {
+       background-color: #ff9e1b;
+    }
+    a {
+      display: block;
+    }
+}

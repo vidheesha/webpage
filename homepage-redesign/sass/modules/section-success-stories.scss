@@ -1,0 +1,53 @@
+#successStories {
+
+  .success-stories-slide {
+
+    .carousel-caption {
+      top: 41%;
+      left: 7%;
+      padding: 0;
+      width: 86%;
+      @media (min-width: $screen-sm) {
+        text-align: center;
+        top: 36.5%;
+      }
+
+      .success-stories-slider-title {
+        @media (min-width: $screen-md) {
+          font-size: 45px;
+        }
+
+      }
+      .success-stories-slider-subtitle {
+        padding-top: 0;
+        padding-bottom: 1px;
+        width: 75%;
+        margin: -2px auto 10px;
+        line-height: 1.3;
+
+        @media (min-width: $screen-sm) {
+          width: 100%;
+          margin: -6px auto 10px;
+          padding-bottom: 18px;
+        }
+
+        @media (min-width: $screen-md) {
+          padding-bottom: 35px;
+        }
+      }
+    }
+  }
+
+  carousel {
+      .slick-prev, .slick-next {
+          height: 75%;
+          top: 36%;
+      }
+  }
+  @media (min-width: $screen-md) {
+    .interactive-carousel.slick-slide:not(:first-of-type):not(:last-of-type){
+        height: 388px;
+      }
+  }
+}
+

@@ -1,0 +1,132 @@
+#apparel {
+
+  sup {
+    top: -.3em;
+  }
+
+  .apparel-upper-section {
+    position: relative;
+    .section-header {
+      @include respond-to(992){
+        height: 83px;
+      }
+      @include respond-to(1025){
+        height: 98px;
+        margin-top: 29px;
+      }
+      @include respond-to(1200){
+        margin-top: -31px;
+      }
+      &:before {
+        @include respond-to(768){
+          top: 124%;
+        }
+        @include respond-to(1025){
+          top: 119%;
+        }
+      }
+      div {
+        @include respond-to(768){
+          height: 29px;
+        }
+        @include respond-to(1025){
+          height: 46px;
+        }
+      }
+    }
+    .section-slider {
+      overflow: hidden;
+    }
+    .apparel-overlap-image {
+      position: absolute;
+      bottom: 0;
+      width: 60%;
+      z-index: 9;
+      @media (min-width: $screen-md) {
+        width: 54%;
+      }
+
+      img {
+        width: 100%;
+        margin-left: 1%;
+        @media (min-width: $screen-md) {
+          margin-left: 5%;
+        }
+      }
+    }
+  }
+
+  .apparel-slide {
+    background-image: url("http://img1.beachbodyimages.com/beachbody/image/upload/bbweb/homepage/apparel-slider-guy-girl-375.jpg");
+    padding-bottom: 123%;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: contain;
+    @include respond-to(768){
+      padding-bottom: 40%;
+      background-image: url("http://img1.beachbodyimages.com/beachbody/image/upload/bbweb/homepage/apparel-slider-guy-girl-667.jpg");
+      background-size: cover;
+    }
+    @include respond-to(1025){
+      margin-top: -15px;
+      background-image: url("http://img1.beachbodyimages.com/beachbody/image/upload/bbweb/homepage/apparel-slider-guy-girl-1350.jpg");
+    }
+    .carousel-caption {
+      color: black;
+      width: 100%;
+      line-height: 1;
+      padding-bottom: 9px;
+      @media (min-width: $screen-sm) {
+        top: 13%;
+        width: 196px;
+        left: 44%;
+        margin-left: 0;
+      }
+      @media (min-width: $screen-md) {
+        top: 30%;
+        left: 42%;
+        width: 261px;
+      }
+
+      .apparel-slider-subtitle {
+        max-width: 320px;
+        margin: 0 auto;
+
+        @media (min-width: $screen-sm) {
+          width: 100%;
+          margin: 0;
+        }
+
+        @media (min-width: $screen-md) {
+          font-size: $slider-subtitle-size-desktop - 1px;
+        }
+      }
+    }
+  }
+
+  .slideup-apparel {
+
+      .slideup-title {
+        padding-top: 5px;
+        font-weight: 600;
+        font-size: 16px;
+      }
+
+      .slideup-text {
+        width: 85%;
+        margin: 0 auto;
+        font-weight: 100;
+        font-size: 13px;
+        line-height: 1.3;
+      }
+
+      .slideup-btn {
+        margin-bottom: 10px;
+        margin-top: 10px;
+        padding: 5px 17px;
+        font-size: 12px;
+      }
+  }
+
+}
+

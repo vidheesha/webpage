@@ -1,0 +1,18 @@
+.animate-show{
+  &.ng-hide-fade{
+    opacity: 0;
+    transition: 0s all linear;
+    -webkit-transition: 0s all linear;
+  }
+
+  &.ng-show{
+    opacity: 1;
+    transition: 0.1s all linear;
+    -webkit-transition: 0.1s all linear;
+  }
+}
+
+.previous-image{
+  position: absolute;
+  z-index: -1;
+}

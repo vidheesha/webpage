@@ -1,0 +1,20 @@
+<div class="bb-slider">
+
+    <uib-carousel active="0" interval="-1" no-wrap="false" template-url="js/directives/templates/bb-carousel.html"
+                  ng-class="{ 'slide-up-open' : !sliderData.slideUpClosed }">
+
+        <uib-slide ng-repeat="slide in sliderData.slides track by slide.id" index="slide.id">
+
+            <div ng-include="slide.contentHtml" />
+
+            <bb-slide-up slide-up-closed="sliderData.slideUpClosed" slide-up-html="slide.slideUpHtml" ng-show="slide.slideUpHtml"/>
+
+        </uib-slide>
+
+    </uib-carousel>
+
+    <div ng-include="sliderData.footerHtml" />
+
+    <quick-view-popup section="section"></quick-view-popup>
+
+</div>

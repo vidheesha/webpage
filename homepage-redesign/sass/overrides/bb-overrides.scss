@@ -1,0 +1,17 @@
+@media (max-width: $screen-sm-max){
+    .col-md-offset-1 {
+        margin-left: 0%;
+    }
+}
+
+@media (max-width: 991px){
+    #footer .col-lg-offset-2 {
+       margin-left: 0;
+    }
+}
+
+.row .col-xs-12 {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+

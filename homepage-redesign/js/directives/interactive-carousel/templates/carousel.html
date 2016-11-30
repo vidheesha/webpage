@@ -1,0 +1,38 @@
+<div class="slider-container">
+    <slick class="slider single-item"
+           center-mode="{{settings.endless}}"
+           preview-mode="false"
+           center-padding="30px"
+           responsive="[ { breakpoint: 992, settings: { swipeToSlide: true, slidesToShow: 3 } }, { breakpoint: 768, settings: { swipeToSlide: true, slidesToShow: 1, arrows: false, previewMode: true, previewPadding: '92px' } } ]"
+           slides-to-show=4
+           slides-to-scroll="{{settings.slidesToScroll || 1}}"
+           infinite="{{settings.endless}}"
+           initial-slide= "settings.initialSlide"
+           adaptive-height="false"
+           mobile-first="true">
+        <div class="interactive-carousel" ng-repeat="slide in settings.slides" ng-if="slide.viewMoreText !== null">
+            <div class="item-container" ng-if="!slide.isViewMore">
+                <a class="background-image" ng-click="callLogLink(slot, $index, slide.quickViewProductCode)" ng-href="{{slide.learnMoreButtonUrl}}"  target="{{slide.learnMoreButtonUrl.indexOf('http') == 0 ? '_blank' : '_self'}}">
+                    <img class="normal" ng-src="{{slide.imageSource}}" alt="Learn more about {{slide.productName}}">
+                    <img class="new-corner" ng-show="slide.hasNewProductFlag" src="//img1.beachbodyimages.com/beachbody/image/upload/bbweb/homepage/slider_new_corner_blue.png" >
+                    <img class="best-seller" ng-show="slide.hasBestSellerFlag" src="//img1.beachbodyimages.com/beachbody/image/upload/bbweb/homepage/carousel_best_seller_corner.png">
+                </a>
+                <div class="overlay" ng-show="slide.hoverAction === 'Image'" ng-touchstart="touchStart($event)" ng-mouseenter="mouseEnter($event)" ng-mouseleave="mouseLeave($event)">
+                    <img ng-src="{{slide.hoverImageSource}}" alt="Learn more about {{slide.productName}}">
+                    <input type="button" ng-show="slide.hasLearnMoreButton" ng-click="learnMoreButtonPressed(slide.learnMoreButtonUrl, slide.quickViewProductCode, $index)" value="Learn More" class="btn-learn-more" />
+                </div>
+                <!-- The hidden-xs and hidden-sm here are a hack to remove the Quick View functionality from tablet and mobile. -->
+                <!-- This was added due to a last minute requirement and should be refactored eventually.-->
+                <!-- See NH-196 -->
+                <div ng-show="slide.hoverAction === 'QuickViewButton'" class="overlay-quick-view hidden-xs hidden-sm">
+                    <input type="button" class="btn-quick-view" ng-click="quickViewButtonPressed(slide.quickViewProductCode)"/>
+                </div>
+            </div>
+            <div class="item-container view-more" ng-if="slide.isViewMore && slide.viewMoreText !== null">
+                <img src="//img1.beachbodyimages.com/beachbody/image/upload/bbweb/homepage/carousel_image_beachbody_blank_square.jpg" alt="View More {{slide.viewMoreText}}">
+                <div class="view-more-text">VIEW MORE <br> {{slide.viewMoreText}}</div>
+                <input type="button" value="Click Here" ng-click="clickHereButtonPressed($index)" class="btn-click-here" />
+            </div>
+        </div>
+    </slick>
+</div>

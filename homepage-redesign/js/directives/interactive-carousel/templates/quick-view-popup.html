@@ -1,0 +1,13 @@
+<!-- The hidden-xs and hidden-sm here are a hack to remove the Quick View functionality from tablet and mobile. -->
+<!-- This was added due to a last minute requirement and should be refactored eventually.-->
+<!-- See NH-196 -->
+<div ng-class="{ 'darken-background': showQuickView }" class="hidden-xs hidden-sm">
+
+    <div class="interactive-carousel-quick-view-popup modal-fade" ng-show="showQuickView">
+        <!--<input type="button" value="CLOSE" ng-click="closePopup()">-->
+
+        <div class="pop-up-x" ng-click = "closePopup()">X</div>
+        <gse-product-detail product-detail-data="quickViewProductDetail" product-slot-data="quickViewProductSlot"/>
+    </div>
+
+</div>

@@ -1,0 +1,476 @@
+// Global settings for the interactive-carousel. These shouldn't need
+// to be changed. Individual sections that use the interactive-carousel
+// should have their own overrides in the "modules/section-XXXXXX.scss" files.
+
+$slider-font-family: "proxima-nova", "Open Sans", "Gill Sans MT", "Gill Sans", Corbel, Arial, "sans-serif";
+$interactive-carousel-font-family: "proxima-nova", "Open Sans", "Gill Sans MT", "Gill Sans", Corbel, Arial, "sans-serif";
+$slider-title-size-desktop: 40px;
+$slider-title-size-tablet: 27px;
+$slider-title-size-mobile: 15px;
+$slider-subtitle-size-desktop: 17px;
+$slider-subtitle-size-tablet: 14px;
+$slider-subtitle-size-mobile: 12px;
+
+// This hack was added to satisfy a last minute requirement to remove Quick View
+// functionality for tablet and mobile. Note that this should be refactored at a later time.
+// See NH-196
+.tb-hh {
+  & .overlay-quick-view {
+    display: none !important;
+  }
+}
+// End hack
+
+bb-slider { 
+    & .carousel-inner {
+        & .slide {
+          font-family: $slider-font-family;
+
+          & > img {
+            width: 100%;
+          }
+
+          & .carousel-caption {
+            color: white;
+            text-shadow: none;
+            text-align: center;
+            bottom: 0;
+            left: 0;
+            @media (min-width: $screen-sm) {
+              text-align: left;
+            }
+
+            & .slide-title {
+              font-size: $slider-title-size-mobile;
+              font-weight: bold;
+
+              @media (min-width: $screen-sm) {
+                font-size: $slider-title-size-tablet;
+              }
+
+              @media (min-width: $screen-md) {
+                font-size: $slider-title-size-desktop;
+              }
+            }
+
+            & .slide-subtitle {
+              font-size: $slider-subtitle-size-mobile;
+              font-weight: lighter;
+              padding-top: 2px;
+              padding-bottom: 10px;
+              line-height: 1.2;
+              width: 90%;
+
+              @media (min-width: $screen-sm) {
+                font-size: $slider-subtitle-size-tablet;
+                padding-top: 5px;
+                padding-bottom: 18px;
+              }
+
+              @media (min-width: $screen-md) {
+                font-size: $slider-subtitle-size-desktop;
+                padding-bottom: 35px;
+                width: 474px;
+              }
+            }
+          }
+        }
+    }
+
+        & .slider-button {
+          color: white;
+          font-size: 12px;
+          font-weight: 600;
+          line-height: 1;
+          letter-spacing: 1px;
+
+          @include border-radius(2px);
+          @include background-image-gradient(#fcae45, #fe9507);
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcae45', endColorstr='#fe9507',GradientType=0 ); /* IE6-9 */
+
+
+          border: none;
+          border-top: 1px solid #f9ca8a;
+          padding: 5px 12px;
+
+          @media (min-width: $screen-sm) {
+            font-size: 13px;
+            padding: 7px 15px;
+          }
+          @media (min-width: $screen-md) {
+            font-size: 14px;
+            padding: 7px 20px;
+          }
+
+          &:hover {
+            color: white;
+
+            @include border-radius(2px);
+            @include background-image-gradient(#fcae45, #fe9507);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcae45', endColorstr='#fe9507',GradientType=0 ); /* IE6-9 */
+
+            border: none;
+            border-top: 1px solid #f9ca8a;
+          }
+          &:focus {
+            color: white;
+          }
+        }
+}
+
+
+interactive-carousel carousel slick {
+
+  margin-bottom: 0 !important;
+
+  & .interactive-carousel {
+
+        &:focus {
+          outline: none;
+        }
+
+    & .item-container {
+
+      position: relative;
+      width: 100%;
+
+     & .background-image {
+       &:focus {
+         outline: none;
+       }
+
+       & img.normal {
+       }
+     }
+
+      & .overlay {
+
+        &:focus {
+          outline: none;
+        }
+
+        width:100%;
+        transition: all 0.3s ease 0s;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.0;
+
+        & img {
+          width: 100%;
+
+            &:focus {
+              outline: none;
+            }
+        }
+
+        & input[type=button].btn-learn-more {
+          position: absolute;
+          height: 30px;
+          width: 142px;
+          bottom: 0;
+          margin-bottom: 2em;
+          left: 50%;
+          margin-left: -71px;
+          color: white;
+          text-transform: uppercase;
+          border: 0px solid #fe9506;
+          border-radius: 3px;
+          font-family: $interactive-carousel-font-family;
+          font-weight: bold;
+          font-size: 11pt;
+
+          background: #f9ca8a; /* Old browsers */
+          background: -moz-linear-gradient(top,  #f9ca8a 0%, #fe9507 16%); /* FF3.6-15 */
+          background: -webkit-linear-gradient(top,  #f9ca8a 0%,#fe9507 16%); /* Chrome10-25,Safari5.1-6 */
+          background: linear-gradient(to bottom,  #f9ca8a 0%,#fe9507 16%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9ca8a', endColorstr='#fe9507',GradientType=0 ); /* IE6-9 */
+
+          @media only screen and (max-width : $screen-lg) and (min-width : $screen-md) {
+            height: 30px;
+            width: 142px;
+            margin-bottom: 1em;
+            margin-left: -71px;
+            border-radius: 2px;
+            font-size: 9pt;
+          }
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+
+      & img.normal {
+        width: 100%;
+      }
+
+      & img.new-corner, & img.best-seller {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .overlay-quick-view {
+        transition: all 0.3s ease 0s;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 1.0;
+        visibility: visible;
+        padding: 0px;
+         & svg {
+           position: absolute;
+           display: block;
+
+           path {
+             fill: rgba(0,0,0,0.5);
+           }
+         }
+
+         @media only screen and (min-width: $screen-md) {
+            opacity: 0.0;
+            visibility: hidden;
+         }
+
+         @media only screen and (max-width: $screen-xs-max) {
+            opacity: 0.0;
+            visibility: hidden;
+         }
+
+        & input.btn-quick-view {
+          position: absolute;
+          height: 30px;
+          width: 142px;
+          margin-bottom: 2em;
+          left: 50%;
+          top: 50%;
+          margin-left: -71px;
+          margin-top: -15px;
+          border: 0px solid #fe9506;
+          background-image: url('//img1.beachbodyimages.com/beachbody/image/upload/bbweb/homepage/btn_carousel_quickview.png');
+          background-color: transparent;
+          @include border-radius(0);
+
+         @media only screen and (max-width: $screen-sm-max) {
+              margin-left: 0px;
+              left: 0;
+              margin-top: -50px;
+              background-image: url('//img1.beachbodyimages.com/beachbody/image/upload/bbweb/homepage/t_btn_carousel_quickview.png');
+              width: 100%;
+              height: 82px;
+              background-position: center;
+              background-size: 100%;
+         }
+
+        @media only screen and (max-width: $screen-xs-max) {
+            height: 155px;
+            margin-top: -95px;
+            background-image: url('//img1.beachbodyimages.com/beachbody/image/upload/bbweb/homepage/m_btn_carousel_quickview.png');
+
+        }
+
+         @media only screen and (max-width: $screen-xs) {
+            background-image: url('//img1.beachbodyimages.com/beachbody/image/upload/bbweb/homepage/m_btn_carousel_quickview.png');
+            height: 90px;
+            margin-left: 0px;
+            left: 0;
+            width: 100%;
+            background-position: center;
+            background-size: 100%;
+            margin-top: -50px;
+         }
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+        @media only screen and (min-width: $screen-sm) {
+          &:hover {
+            & .overlay-quick-view {
+              opacity: 1.0;
+              visibility: visible;
+            }
+          }
+        }
+
+      &.view-more {
+        background-color: #003160;
+        height: 100%;
+        width: 100%;
+
+        & img {
+          width: 100%;
+        }
+
+        & .view-more-text {
+            text-transform: uppercase;
+            position: absolute;
+            text-align: center;
+            top: 58%;
+            width: 100%;
+            color: white;
+            font-family: $interactive-carousel-font-family;
+            font-size: 17px;
+            font-weight: 500;
+            line-height: 1.2;
+            @media only screen and (min-width: $screen-sm) {
+                font-size: 19px;
+            }
+        }
+
+        & .btn-click-here {
+          position: absolute;
+          height: 30px;
+          width: 110px;
+          bottom: 0;
+          margin-bottom: 9%;
+          left: 50%;
+          margin-left: -55px;
+          color: white;
+          text-transform: uppercase;
+          border: 0px solid #fe9506;
+          border-radius: 3px;
+          font-family: $interactive-carousel-font-family;
+          font-weight: 600;
+          font-size: 13px;
+
+          background: #f9ca8a; /* Old browsers */
+          background: -moz-linear-gradient(top,  #f9ca8a 0%, #fe9507 16%); /* FF3.6-15 */
+          background: -webkit-linear-gradient(top,  #f9ca8a 0%,#fe9507 16%); /* Chrome10-25,Safari5.1-6 */
+          background: linear-gradient(to bottom,  #f9ca8a 0%,#fe9507 16%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9ca8a', endColorstr='#fe9507',GradientType=0 ); /* IE6-9 */
+
+          @media only screen and (min-width: $screen-sm) {
+            margin-bottom: 10%;
+          }
+
+          @media only screen and (min-width: $screen-md) {
+           font-size: 15px;
+           margin-left: -71px;
+           width: 142px;
+           border-radius: 3px;
+           margin-bottom: 9%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.slider-container {
+  width: 100%;
+  background-color: white;
+
+  & .slick-list {
+    width: 100%;
+    transform: none;
+    @media only screen and (min-width: $screen-sm) {
+      width: 90%;
+      margin: 0 auto;
+    }
+    @media only screen and (min-width: $screen-md) {
+      width: 92%;
+    }
+  }
+}
+
+
+.slick-prev,.slick-prev:hover,.slick-prev:focus {
+  height: 100%;
+  width: 5%;
+  left: 0;
+  z-index:300;
+  margin-top: 0;
+  margin-left: 0;
+  background-color: rgba(0,0,0,0.08);
+  @include border-radius(0);
+
+  @media only screen and (min-width: $screen-md) {
+    width: 4%;
+    left: 0;
+  }
+
+  .left-arrow {
+    position: absolute;
+    right: 0;
+    top: 41%;
+    height: 18%;
+    width: 70%;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: cover;
+    background-image: url('//img1.beachbodyimages.com/beachbody/image/upload/bbweb/homepage/carousel_left_right_arrow_sprite.png');
+  }
+
+  &:before {
+    content: '';
+  }
+}
+
+.slick-current.slick-active.interactive-carousel{
+    .item-container {
+       .overlay-quick-view {
+           @media only screen and (max-width: $screen-xs-max) {
+                opacity: 1.0;
+                visibility: visible;
+           }
+       }
+    }
+}
+
+.slick-active.interactive-carousel{
+    .item-container {
+       .overlay-hovered {
+           opacity: 1.0;
+       }
+    }
+}
+
+.slick-next,.slick-next:hover,.slick-next:focus {
+  height: 100%;
+  width: 5%;
+  right: 0;
+  z-index:300;
+  margin-top: 0;
+  margin-right: 0;
+  background-color: rgba(0,0,0,0.08);
+  @include border-radius(0);
+  
+  @media only screen and (min-width: $screen-md) {
+    width: 4%;
+    right: 0;
+  }
+
+  .right-arrow {
+    position: absolute;
+    left: 0;
+    top: 41%;
+    height: 18%;
+    width: 70%;
+    background-repeat: no-repeat;
+    background-position: right 0;
+    background-size: cover;
+    background-image: url('//img1.beachbodyimages.com/beachbody/image/upload/bbweb/homepage/carousel_left_right_arrow_sprite.png');
+  }
+
+  &:before {
+    content: '';
+  }
+}
+
+.slick-prev.slick-disabled {
+  cursor: default;
+  .left-arrow {
+    background-image: url('//img1.beachbodyimages.com/beachbody/image/upload/bbweb/homepage/carousel_left_right_arrow_sprite_inactive.png');
+  }
+}
+
+.slick-next.slick-disabled{
+  cursor: default;
+  .right-arrow {
+    background-image: url('//img1.beachbodyimages.com/beachbody/image/upload/bbweb/homepage/carousel_left_right_arrow_sprite_inactive.png');
+  }
+}

@@ -1,0 +1,35 @@
+.bb-slideup {
+
+  font-family: "proxima-nova", "Open Sans", "Gill Sans MT", "Gill Sans", Corbel, Arial, "sans-serif";
+
+  z-index: 9999;
+
+  color: white;
+
+  width: 100%;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  background: rgba(0, 0, 0, .85);
+
+  &.open {
+    background: rgba(0, 0, 0, .75);
+  }
+
+  .slideup-caret {
+    width: 9px;
+    height: 5px;
+
+    margin: 3px auto auto;
+
+    cursor: pointer;
+
+    background: url('//img1.beachbodyimages.com/beachbody/image/upload/bbweb/homepage/m_up-down-collapse-sprite.png') 0 0;
+
+    &.open {
+      background: url('//img1.beachbodyimages.com/beachbody/image/upload/bbweb/homepage/m_up-down-collapse-sprite.png') 0 5px;
+    }
+  }
+}

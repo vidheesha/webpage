@@ -1,0 +1,80 @@
+.interactive-carousel-quick-view-popup {
+  background-color: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  @include translate(-50%, -50%);
+  width: 100%;
+  margin-left: 0px;
+  z-index: 1000;
+  max-width: 1250px;
+
+  // Tablet Modal
+  @media only screen and (max-width: $screen-md) {
+    position: fixed;
+    top: 10%;
+    left: 10%;
+    @include transform-none();
+    bottom: auto;
+    max-height: 80%;
+    width: 80%;
+    overflow-y: scroll;
+    z-index: 100;
+  }
+
+  // Mobile Modal
+  @media only screen and (max-width: $screen-xs) {
+    position: fixed;
+    bottom: auto;
+    top: 5%;
+    left: 0;
+    @include transform-none();
+    max-height: 90%;
+    width: 100%;
+    overflow-y: scroll;
+  }
+
+  .pop-up-x {
+    color: #a9a9a9;
+    font-size: x-large;
+    font-weight: 200;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    margin-right: 5px;
+    padding: 10px 10px;
+    z-index: 999;
+
+    @media (min-width: $screen-md) {
+      margin-right: 50px;
+    }
+    @media (max-width: $screen-xs) {
+      position: fixed;
+      right: 10px;
+    }
+  }
+}
+
+.modal-fade {
+  transition: 0.3s linear all;
+  opacity: 1;
+}
+
+.modal-fade.ng-hide {
+  opacity: 0;
+}
+
+.darken-background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  width: 100%;
+  z-index: 10000;
+}
+
+.quick-view-open {
+  overflow: hidden;
+}

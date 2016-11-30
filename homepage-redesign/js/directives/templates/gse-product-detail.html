@@ -1,0 +1,166 @@
+<div class="gse-product-detail">
+
+    <span class="loading-icon" ng-show="showLoadingIcon"><img
+            src="/text/us/homepage-redesign/img/ajax-loader.gif"></span>
+
+    <div class="gse-main-content container-fluid" ng-hide="showLoadingIcon">
+
+        <!-- Thumbnails-->
+        <div class="gse-thumbnails col-xs-12 col-md-5 col-md-offset-1">
+
+            <!-- Selected Thumbnail-->
+            <div class="thumbnail-main col-sm-8 col-sm-push-2 col-md-10">
+                <img ng-src="{{ currentThumbnail }}" alt="{{ data.shortDescription }}">
+            </div>
+
+            <!-- Small Thumbnails -->
+            <div class="thumbnails col-sm-2 col-sm-pull-8 col-md-2 col-md-pull-10" ng-show="data.thumbnails.length > 1">
+                <div ng-repeat="thumbnail in data.thumbnails track by $index"
+                     ng-show="thumbnail.imagePath || thumbnail.largeImagePath" class="gse-thumbnail">
+
+                    <img ng-src="{{ getThumbnailImage(thumbnail, false) }}" alt="{{ thumbnail.altText }}"
+                         ng-click="setCurrentThumbnail(thumbnail)">
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Product Details -->
+        <div class="gse-details col-xs-12 col-sm-12 col-md-4 col-md-offset-1">
+
+            <div class="product-name" ng-bind-html="data.productName"/>
+            <div class="product-installments">
+                <span ng-show="data.installmentCount > 1">
+                    JUST {{ data.installmentCount }} MONTHLY PAYMENTS OF
+                </span>
+                <br class="hidden-xs" />
+                <span class="product-costs" ng-show="data.installmentAmount > 0">
+                    <span class="product-amount">
+                        {{ data.installmentAmount | currency : '$' : 2}}
+                    </span>
+                    <span class="currency">
+                        {{ data.installmentCurrency }}
+                    </span>
+                    <span class="s-and-h">
+                        {{ data.shippingAndHandlingAmount | shippingAndHandling }}
+                    </span>
+                </span>
+            </div>
+
+            <div class="gse-bazaar" ng-show="data.bvReviewCount > 0">
+                <div class="rating-stars-background">
+                    <a href="{{ data.bvProductReviewUrl }}">
+                        <div class="rating-stars {{ data.bvStarRatingClass }}"/>
+                    </a>
+                </div>
+                <span class="rating">
+                    {{ data.bvRating | number : 1 }} of 5
+                </span>
+                <span class="review-count">
+                    ({{ data.bvReviewCount }} reviews)
+                </span>
+            </div>
+
+            <div class="product-description" ng-bind-html="data.shortDescription"/>
+
+            <div class="product-options" ng-show="data.productOptions.length > 0">
+
+                <div class="gse-picker color">
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="colorDropdown"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <span ng-hide="productColor">
+                                <span class="color-icon"></span>
+                                <span class="dropdown-text"> Color</span>
+                            </span>
+                            <span ng-show="productColor">
+                                <img class="chosen-color" ng-src="{{productColor ? '/images' + productColor : ''}}">
+                            </span>
+                            <span class="dropdown-caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="colorDropdown">
+                            <li ng-repeat-start="color in data.productOptions[0].options track by $index">
+                                <a href="#" ng-click="setProductColor(color)">
+                                    <img class="dropdown-color" ng-src="{{ '/images' + color.imagePath }}">
+                                </a>
+                            </li>
+                            <span ng-repeat-end/>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="gse-picker size">
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="sizeDropdown"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <span class="dropdown-text">
+                                {{ productSizeLabel || 'Size' }}
+                            </span>
+                            <span class="dropdown-caret"/>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="sizeDropdown">
+                            <li ng-repeat-start="size in data.productOptions[1].options track by $index">
+                                <a href="#" ng-click="setProductSize(size)">
+                                    {{ size.code }}
+                                </a>
+                            </li>
+                            <span ng-repeat-end/>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="gse-picker qty">
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle qty" type="button" id="qtyDropdown"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <span class="dropdown-text">
+                                {{ productQty || 'Qty' }}
+                            </span>
+                            <span class="dropdown-caret"/>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="qtyDropdown">
+                            <li ng-repeat-start="qty in [1, 2, 3] track by $index">
+                                <a href="#" ng-click="setProductQty(qty)">
+                                    {{ qty }}
+                                </a>
+                            </li>
+                            <span ng-repeat-end/>
+                        </ul>
+                    </div>
+                </div>
+                <div class="error-message" ng-show="showErrorMessage" ng-bind="errorMessage"></div>
+
+            </div>
+            <div class="spacer" ng-class="{'mbg-space': data.mbgDays}"></div>
+            <div class="gse-cta col-xs-12">
+
+                <div class="mbg mbg-{{ data.mbgDays }} visible-xs" ng-show="data.mbgDays"/>
+                <!-- Should be noted here that the removal of the Add to Cart button for Activit (SUPACT63104) is a last minute hack to satisfy -->
+                <!-- a legal requirement. See NH-211. In the future, property such as 'suppressAddToCart' should be used here instead of the -->
+                <!-- hardcoded product code. -->
+
+                <!-- Addendum note: the product code has recently been changed from SUPACT63104 to SUPACT93105, so this was just updated to match that changed -->
+                <!-- RB 6/14/16 -->
+                <div class="cta col-xs-12 col-sm-7" ng-class="{ 'no-add-to-cart': !data.productPk || !data.installmentAmount || data.productCode == 'SUPACT93105' }">
+                    <span>
+                        <a href="#" title="Add to cart" class="btn btn-default btn-gse add-to-cart" ng-click="addToCart()"
+                           ng-show="data.productPk && data.installmentAmount && data.productCode != 'SUPACT93105'">ADD TO CART</a>
+                    </span>
+
+                    <span ng-switch="data.icidQuery">
+                        <a ng-switch-when="null" ng-href="{{data.viewDetailsUrl}}" ng-click="logAnalytics('viewdetails')"
+                           title="View details" class="btn btn-default btn-gse view-details">VIEW DETAILS</a>
+
+                        <a ng-switch-default ng-href="{{data.viewDetailsUrl | appendIcidQuery:data.icidQuery}}"
+                           title="View details" class="btn btn-default btn-gse view-details" target="_blank">VIEW DETAILS</a>
+                    </span>
+
+                </div>
+                <div class="mbg mbg-{{ data.mbgDays }} hidden-xs col-sm-5" ng-show="data.mbgDays"/>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,26 @@
+$bb-slider-active-indicator-color: #005EB7;
+$bb-slider-inactive-indicator-color: #666666;
+
+.bb-slider {
+  height: 100%;
+  position: relative;
+
+  // Indicator styling
+  .carousel-indicators {
+
+    bottom: 0;
+
+    li {
+      border: none;
+      margin: 0 10px 0px;
+
+      height: 15px;
+      width: 15px;
+
+      background-color: $bb-slider-inactive-indicator-color;
+    }
+    .active {
+      background-color: $bb-slider-active-indicator-color;
+    }
+  }
+}

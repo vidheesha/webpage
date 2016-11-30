@@ -1,0 +1,435 @@
+$gse-product-detail-font-family: "proxima-nova", "Open Sans", "Gill Sans MT", "Gill Sans", Corbel, Arial, "sans-serif";
+$gse-product-detail-text-color: black;
+$gse-bazaar-stars-sprite: "/images/beachbody/en_us/global/bbv6/bv_stars.png";
+
+.gse-product-detail {
+  min-height: 200px;
+
+  // Loading spinner.
+  .loading-icon {
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: auto;
+    }
+  }
+
+  .gse-main-content {
+    text-align: center;
+    color: $gse-product-detail-text-color;
+    font-family: $gse-product-detail-font-family;
+    padding-top: 18px;
+    padding-bottom: 16px;
+
+    @media (min-width: $screen-sm) {
+      text-align: left;
+    }
+
+    @media (min-width: $screen-md) {
+      padding-top: 30px;
+      padding-bottom: 30px;
+      min-height: 400px;
+    }
+
+    .error-message {
+      color: red;
+      padding-top: 10px;
+      margin-bottom: -15px;
+    }
+
+    // Thumbnails
+    .gse-thumbnails {
+      padding-left: 0;
+      @media (min-width: $screen-md) {
+          margin-left: 4.333%;
+      }
+
+      // Square selectable thumbnails
+      .thumbnails {
+        margin-top: 10px;
+
+        .gse-thumbnail {
+          display: inline;
+          margin-top: 10px;
+          margin-bottom: 6px;
+
+          @media (min-width: $screen-sm) {
+            display: block;
+            margin-top: 3px;
+            margin-bottom: 0;
+          }
+
+          img {
+            cursor: pointer;
+            border: 1px solid lightgray;
+            height: 50px;
+            width: 50px;
+            margin: 4px;
+
+            @media (min-width: $screen-sm) {
+              width: 60px;
+              height: 60px;
+              margin: 0;
+            }
+
+            @media (min-width: $screen-md) {
+              width: 80px;
+              height: 80px;
+              margin: 0;
+            }
+          }
+        }
+      }
+
+      // Selected thumbnail
+      .thumbnail-main {
+        img {
+          display: block;
+          margin: auto;
+          width: 60%;
+
+          @media (min-width: $screen-md) {
+            padding-left: 50px;
+            width: 100%;
+            height: 100%;
+            max-height: 400px;
+            max-width: 400px;
+          }
+        }
+      }
+    }
+
+    // Product Details
+    .gse-details {
+
+      .spacer {
+        height: 0px;
+        @media (min-width: $screen-md) {
+          height: 80px;
+          &.mbg-space {
+            height: 140px;
+          }
+        }
+      }
+
+      @media (min-width: $screen-sm) {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      @media (min-width: $screen-md) {
+        min-height: 350px;
+        padding: 0;
+        width: 44.333%;
+        margin-left: 4.33%;
+      }
+
+      padding-left: 0;
+
+      .product-name {
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: .5px;
+        margin-top: 5px;
+
+        @media (min-width: $screen-md) {
+          font-size: 30px;
+        }
+      }
+
+      .product-description {
+        font-size: 12px;
+        padding-left: 10px;
+        padding-right: 10px;
+
+        @media (min-width: $screen-sm) {
+          width: 90%;
+          padding: 0;
+        }
+
+        @media (min-width: $screen-md) {
+          font-size: 14px;
+          width: 100%;
+        }
+      }
+
+      .product-installments {
+        font-size: 11px;
+        font-weight: lighter;
+        letter-spacing: .75px;
+
+        @media (min-width: $screen-sm) {
+          letter-spacing: .5px;
+        }
+
+        .product-costs {
+          .product-amount {
+            font-weight: bold;
+
+            @media (min-width: $screen-sm) {
+              font-size: 16px;
+            }
+
+            @media (min-width: $screen-md) {
+              font-size: 24px;
+            }
+          }
+        }
+      }
+
+      .product-options {
+        padding-top: 15px;
+
+        .gse-picker {
+          display: inline-block;
+          padding-right: 5px;
+          padding-top: 10px;
+
+          &.color {
+            .color-icon {
+              background: url(//img1.beachbodyimages.com/beachbody/image/upload/bbweb/homepage/apparel_select_sprite.png) no-repeat;
+              overflow: hidden;
+              height: 11px;
+              width: 11px;
+              margin-right: 5px;
+              display: inline-block;
+              float: left;
+              position: relative;
+              top: 8px;
+            }
+            img {
+              width: auto;
+            }
+
+          }
+
+          .chosen-color {
+            float: left;
+            position: relative;
+            top: 6px;
+          }
+
+          .dropdown-caret {
+            background: url(//img1.beachbodyimages.com/beachbody/image/upload/bbweb/homepage/apparel_select_sprite.png) no-repeat;
+            background-position: 0 -56px;
+            overflow: hidden;
+            height: 27px;
+            width: 27px;
+            float: right;
+            display: inline-block;
+          }
+
+          .dropdown-toggle {
+            width: 105px;
+            height: 41px;
+            padding-right: 6px;
+
+            &.qty {
+              width: 75px;
+            }
+          }
+
+          .btn-default {
+            border-color: #b0b0b0;
+          }
+
+          .dropdown-text {
+            font-weight: lighter;
+            color: #c6c6c6;
+            float: left;
+            position: relative;
+            top: 5px;
+            margin-right: 5px;
+          }
+        }
+      }
+
+      // Bazaar Ratings
+      .gse-bazaar {
+        font-size: 11px;
+        padding-top: 12px;
+        margin-left: -5px;
+
+        .rating-stars-background {
+          display: inline-block;
+          background-image: url($gse-bazaar-stars-sprite);
+          background-repeat: no-repeat;
+          background-position-x: 1px;
+          background-position-y: -218px;
+          position: relative;
+          top: 0;
+          height: 22px;
+          width: 74px;
+          margin-top: -3px;
+        }
+
+        .rating {
+          vertical-align: top;
+          padding-left: 5px;
+        }
+
+        .review-count {
+          vertical-align: top;
+        }
+
+        .rating-stars {
+          background-image: url($gse-bazaar-stars-sprite);
+          background-repeat: no-repeat;
+          float: left;
+          height: 22px;
+          width: 74px;
+          padding-right: 5px;
+          padding-top: 20px;
+
+          &.BVstar-0-0 {
+            background-position: 0 2px;
+          }
+
+          &.BVstar-1-0 {
+            background-position: 0 -20px;
+          }
+
+          &.BVstar-1-5 {
+            background-position: 0 -42px;
+          }
+
+          &.BVstar-2-0 {
+            background-position: 0 -64px;
+          }
+
+          &.BVstar-2-5 {
+            background-position: 0 -86px;
+          }
+
+          &.BVstar-3-0 {
+            background-position: 0 -108px;
+          }
+
+          &.BVstar-3-5 {
+            background-position: 0 -130px;
+          }
+
+          &.BVstar-4-0 {
+            background-position: 0 -152px;
+          }
+
+          &.BVstar-4-5 {
+            background-position: 0 -174px;
+          }
+
+          &.BVstar-5-0 {
+            background-position: 0 -196px;
+          }
+        }
+      }
+
+      // Money Back Guarantee
+      .mbg {
+        width: 142px;
+        height: 68px;
+        display: inline-block;
+        margin: 0 auto;
+        padding: 0;
+        background-position-x: 0;
+
+        &.mbg-30 {
+          background: url(//img1.beachbodyimages.com/beachbody/image/upload/common/30DAYMBG_LessS_H_English_White_BG.svg) no-repeat;
+          background-position: center;
+
+          @media (min-width: $screen-sm) {
+            background-position-x: 0;
+          }
+        }
+
+        &.mbg-60 {
+          background: url(//img1.beachbodyimages.com/beachbody/image/upload/common/60DAYMBG_LessS_H_English_White_BG.svg) no-repeat;
+          background-position: center;
+
+          @media (min-width: $screen-sm) {
+            background-position-x: 0;
+          }
+        }
+
+        &.mbg-90 {
+          background: url(//img1.beachbodyimages.com/beachbody/image/upload/common/90DAYMBG_LessS_H_English_White_BG.svg) no-repeat;
+          background-position: center;
+
+          @media (min-width: $screen-sm) {
+            background-position-x: 0;
+          }
+        }
+      }
+
+      // Add to cart, View Details, and MBG row.
+      .gse-cta {
+        padding: 0;
+        margin-top: 10px;
+
+        @media (min-width: $screen-md) {
+          margin-bottom: 5px;
+          position: absolute;
+          bottom: 0;
+        }
+
+        .cta {
+          margin-top: 15px;
+          padding-left: 0;
+
+          @media (min-width: $screen-md) {
+            margin-bottom: 10px;
+          }
+
+          @media (min-width: $screen-sm) {
+            margin-top: 35px;
+            min-width: 305px;
+          }
+
+          &.no-add-to-cart {
+            min-width: 0px;
+          }
+
+          a {
+            margin: 1px;
+          }
+        }
+
+        // TODO: Pull this out into a global space? Button styling seems to be consistent throughout the homepage.
+        .btn-gse {
+          color: white;
+          font-size: 15px;
+          font-weight: 600;
+          line-height: 1;
+          letter-spacing: 1px;
+          border: none;
+          padding: 7px 15px;
+
+          @include border-radius(2px);
+
+          @media (max-width: $screen-xs-max) {
+            font-size: 12px;
+          }
+
+          &.add-to-cart {
+            @include background-image-gradient(#fcae45, #fe9507);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcae45', endColorstr='#fe9507',GradientType=0 ); /* IE6-9 */
+
+
+            border-top: 1px solid #f9ca8a;
+          }
+
+          &.view-details {
+            @include background-image-gradient(#666666, #222222);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666666', endColorstr='#222222',GradientType=0 ); /* IE6-9 */
+
+
+            border-top: 1px solid lightgray;
+          }
+        }
+      }
+    }
+  }
+}

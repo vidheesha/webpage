@@ -1,0 +1,36 @@
+#gear {
+
+  sup {
+    top: -.3em;
+  }
+
+  .gear-slide {
+
+    .carousel-caption {
+      width: 100%;
+      line-height: 1;
+      padding-bottom: 9px;
+      @media (min-width: $screen-sm) {
+        top: 13%;
+        width: 230px;
+        left: 50px;
+        margin-left: 0;
+      }
+      @media (min-width: $screen-md) {
+        top: 21%;
+        left: 8%;
+        width: 290px;
+      }
+
+      .gear-slider-subtitle {
+        max-width: 320px;
+        margin: 0 auto;
+
+        @media (min-width: $screen-sm) {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+}

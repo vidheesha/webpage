@@ -1,0 +1,28 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin background-image-gradient($top-hex, $bottom-hex) {
+  background: $bottom-hex; /* Old browsers */
+  -webkit-background-image: linear-gradient($top-hex, $bottom-hex);
+  -moz-background-image: linear-gradient($top-hex, $bottom-hex);
+  -ms-background-image: linear-gradient($top-hex, $bottom-hex);
+  background-image: linear-gradient($top-hex, $bottom-hex);
+}
+
+@mixin translate($x, $y) {
+  -webkit-transform: translate($x, $y);
+  -moz-transform: translate($x, $y);
+  -ms-transform: translate($x, $y);
+  transform: translate($x, $y);
+}
+
+@mixin transform-none() {
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  transform: none;
+}

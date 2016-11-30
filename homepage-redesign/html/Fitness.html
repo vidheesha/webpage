@@ -1,0 +1,16 @@
+<div class="container-fluid" ng-controller="fitness.controller">
+    <div class="row">
+        <div class="col-xs-12 interactive-carousel-container">
+            <interactive-carousel id="fitness">
+                <section-header desktop-header-image="//res.cloudinary.com/beachbody/image/upload/bbweb/homepage/heading_fitness.png"
+                                tablet-header-image="//res.cloudinary.com/beachbody/image/upload/bbweb/homepage/t_heading_fitness.png"
+                                mobile-header-image="//res.cloudinary.com/beachbody/image/upload/bbweb/homepage/m_heading_fitness.png"
+                                alt-text="Fitness Header"></section-header>
+                <div class="responsive-image-wrapper section-slider">
+                    <bb-slider section="fitness" slider-data="vm.sliderData"></bb-slider>
+                </div>
+                <carousel section="fitness" settings="vm.carouselSettings" slot="1"></carousel>
+            </interactive-carousel>
+        </div>
+    </div>
+</div>

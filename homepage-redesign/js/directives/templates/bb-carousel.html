@@ -1,0 +1,14 @@
+<div ng-mouseenter="pause()" ng-mouseleave="play()" class="carousel" ng-swipe-disable-mouse ng-swipe-right="prev()" ng-swipe-left="next()">
+
+    <!-- These are the Gray/Blue slide indicators. -->
+    <ol class="carousel-indicators" ng-show="slides.length > 1" ng-class="'slide-' + active">
+        <li ng-repeat="slide in slides | orderBy:indexOfSlide track by $index" ng-class="{ active: isActive(slide) }" ng-click="select(slide)">
+            <span class="sr-only">slide {{ $index + 1 }} of {{ slides.length }}<span ng-if="isActive(slide)">, currently active</span></span>
+        </li>
+    </ol>
+    <!-- Includes the slides of the carousel -->
+    <div class="carousel-inner" ng-transclude></div>
+    <!-- Carousel arrows-->
+    <a class="slick-prev left" ng-click="prev()"><span class=" left-arrow icon-prev"></span></a>
+    <a class="slick-next right" ng-click="next()"><span class="right-arrow icon-next"></span></a>
+</div>

@@ -1,0 +1,17 @@
+<div class="container-fluid" ng-controller="gear.controller">
+
+    <div class="row">
+        <div class="col-xs-12 interactive-carousel-container">
+            <interactive-carousel id="gear">
+                <section-header desktop-header-image="//img1.beachbodyimages.com/beachbody/image/upload/bbweb/homepage/heading_gear.png"
+                                tablet-header-image="//img1.beachbodyimages.com/beachbody/image/upload/bbweb/homepage/t_heading_gear.png"
+                                mobile-header-image="//img1.beachbodyimages.com/beachbody/image/upload/bbweb/homepage/m_heading_gear.png"
+                                alt-text="Gear Header"></section-header>
+                <div class="responsive-image-wrapper section-slider">
+                    <bb-slider section="gear" slider-data="vm.sliderData"></bb-slider>
+                </div>
+                <carousel section="gear" settings="vm.carouselSettings" slot="3"></carousel>
+            </interactive-carousel>
+        </div>
+    </div>
+</div>

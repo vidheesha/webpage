@@ -1,0 +1,30 @@
+$sectionBorderColor: #606060;
+
+#test-section {
+
+  border: 1px solid $sectionBorderColor;
+  margin-top: 1em;
+
+  & .section-header {
+    font-weight: bold;
+    padding-top: 1em;
+    padding-left: 2em;
+    font-size: 18px;
+    padding-bottom: 2em;
+  }
+
+  & .actions {
+    padding-top: 2em;
+  }
+
+  & .result{
+
+    padding-top: 2em;
+    padding-bottom: 2em;
+
+    & .header {
+      font-weight: bold;
+    }
+
+  }
+}
